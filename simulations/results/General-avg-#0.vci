@@ -1,0 +1,85 @@
+file 196154 1584732526                                          
+version 2
+run General-0-20200320-21:38:54-24694
+attr configname General
+attr datetime 20200320-21:38:54
+attr experiment General
+attr inifile loRaNetworkTest.ini
+attr iterationvars "$0=\"avg\""
+attr iterationvarsf avg-
+attr measurement "$0=\"avg\""
+attr network LoRaNetworkTest
+attr processid 24694
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.numberOfGateways 3
+param **.loRaGW[0].numUdpApps 1
+param **.loRaGW[0].packetForwarder.localPort 2000
+param **.loRaGW[0].packetForwarder.destPort 1000
+param **.loRaGW[0].packetForwarder.destAddresses "\"networkServer\""
+param **.loRaGW[0].packetForwarder.indexNumber 0
+param **.loRaGW[1].numUdpApps 1
+param **.loRaGW[1].packetForwarder.localPort 2000
+param **.loRaGW[1].packetForwarder.destPort 1000
+param **.loRaGW[1].packetForwarder.destAddresses "\"networkServer\""
+param **.loRaGW[1].packetForwarder.indexNumber 1
+param **.loRaGW[2].numUdpApps 1
+param **.loRaGW[2].packetForwarder.localPort 2000
+param **.loRaGW[2].packetForwarder.destPort 1000
+param **.loRaGW[2].packetForwarder.destAddresses "\"networkServer\""
+param **.loRaGW[2].packetForwarder.indexNumber 2
+param **.networkServer.numUdpApps 1
+param **.networkServer.**.evaluateADRinServer false
+param **.networkServer.udpApp[0].typename "\"NetworkServerApp\""
+param **.networkServer.udpApp[0].destAddresses "\"loRaGW[0]\""
+param **.networkServer.udpApp[0].destPort 2000
+param **.networkServer.udpApp[0].localPort 1000
+param **.networkServer.udpApp[0].adrMethod "\"avg\""
+param **.numberOfNodes 1
+param **.numberOfPacketsToSend 0
+param **.timeToFirstPacket exponential(100s)
+param **.timeToNextPacket exponential(100s)
+param **.alohaChannelModel false
+param **.loRaNodes[*].**.initFromDisplayString false
+param **.loRaNodes[*].**.evaluateADRinNode false
+param **.loRaNodes[*].**initialLoRaSF intuniform(7,12)
+param **.loRaNodes[*].**initialLoRaBW "125 kHz"
+param **.loRaNodes[*].**initialLoRaCR 4
+param **.loRaNodes[*].**initialLoRaTP "(2dBm + 3dBm*intuniform(0, 4))"
+param **.loRaNodes[*].**.initialX 150m
+param **.loRaNodes[*].**.initialY 150m
+param **.LoRaGWNic.radio.iAmGateway true
+param **.loRaGW[*].**.initFromDisplayString false
+param **.loRaGW[0].**.initialX 300m
+param **.loRaGW[0].**.initialY 300m
+param **.loRaGW[1].**.initialX 250m
+param **.loRaGW[1].**.initialY 250m
+param **.loRaGW[2].**.initialX 200m
+param **.loRaGW[2].**.initialY 200m
+param **.loRaNodes[*].LoRaNic.radio.energyConsumerType "\"LoRaEnergyConsumer\""
+param **.loRaNodes[*].**.energySourceModule "\"IdealEpEnergyStorage\""
+param **.loRaNodes[*].LoRaNic.radio.energyConsumer.configFile "xmldoc(\"energyConsumptionParameters.xml\")"
+param **.sigma 0
+param **.constraintAreaMinX 0m
+param **.constraintAreaMinY 0m
+param **.constraintAreaMinZ 0m
+param **.constraintAreaMaxX 480m
+param **.constraintAreaMaxY 480m
+param **.constraintAreaMaxZ 0m
+param LoRaNetworkTest.**.radio.separateTransmissionParts false
+param LoRaNetworkTest.**.radio.separateReceptionParts false
+param **.delayer.config "xmldoc(\"cloudDelays.xml\")"
+param **.radio.radioMediumModule "\"LoRaMedium\""
+param **.LoRaMedium.pathLossType "\"LoRaLogNormalShadowing\""
+param **.minInterferenceTime 0s
+param **.displayAddresses false
+param **.loRaNodes[*].**.powerStorage 5
+
+vector 0 LoRaNetworkTest.loRaNodes[0].SimpleLoRaApp "SF Vector" ETV
+vector 1 LoRaNetworkTest.loRaNodes[0].SimpleLoRaApp "TP Vector" ETV
+0	3407 98072 5406 8803 86585.92572204803 604687.76114950018 3398 10 10 33980 339800
+1	101479 94674 5406 8803 86585.92572204803 604687.76114950018 3398 2 2 6796 13592
+
